@@ -43,14 +43,8 @@ const styles = (theme) => ({
 
 function Header(props) {
 
-  const { classes, onDrawerToggle } = props;
-
-  const [team, setTeam] = useState(0);
-  const teams = ["Team A", "Team B", "Team C", "Team D"];
-  const teamList = teams.map((team, index) => (<Tab textColor="inherit" label={team} onClick={() => setTeam(index)}/>));
-  
   // Data Fetching 
-  const [serverData, setServerData] = useState({});
+  const [serverData, setServerData] = useState([]);
   useEffect(() => {
     fetch('http://localhost:4001/api')
       .then(res => res.json())
@@ -60,6 +54,15 @@ function Header(props) {
       });
   }, []);
   ////
+  
+  const { classes, onDrawerToggle } = props;
+
+  const [team, setTeam] = useState(0);
+  // const teams = ["Team A", "Team B", "Team C", "Team D"];
+  const teams = serverData;
+  console.log(typeof(teams));
+  const teamList = teams.map((team, index) => (<Tab textColor="inherit" label={team.teamname} onClick={() => setTeam(index)}/>));
+  
   
   return (
     <React.Fragment>

@@ -13,6 +13,34 @@ import { withStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import RefreshIcon from '@material-ui/icons/Refresh';
 
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import DraftsIcon from '@material-ui/icons/Drafts';
+import ListItemText from '@material-ui/core/ListItemText';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import Collapse from '@material-ui/core/Collapse';
+import List from '@material-ui/core/List';
+
+import Chart from 'chart.js';
+var myChart = new Chart(ctx, {
+  type: 'radar',
+  data: [20, 10, 4, 2],
+  options: {
+    scale: {
+        angleLines: {
+            display: false
+        },
+        ticks: {
+            suggestedMin: 50,
+            suggestedMax: 100
+        }
+    }
+  }
+});
+var ctx = 'myChart';
+
+
 const styles = (theme) => ({
   paper: {
     maxWidth: 936,
@@ -38,6 +66,12 @@ const styles = (theme) => ({
 
 function Content(props) {
   const { classes } = props;
+  
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
 
   return (
     <Paper className={classes.paper}>
@@ -72,7 +106,32 @@ function Content(props) {
       </AppBar>
       <div className={classes.contentWrapper}>
         <Typography color="textSecondary" align="center">
-          No users for this project yet
+          <List>
+          <ListItem button>
+            <ListItemIcon>
+              <DraftsIcon />
+            </ListItemIcon>
+            <ListItemText primary="Drafts" />
+          </ListItem>
+          <ListItem button onClick={handleClick}>
+              <ListItemIcon>
+                <DraftsIcon />
+              </ListItemIcon>
+              <ListItemText primary="Inbox" />
+              {open ? <ExpandLess /> : <ExpandMore />}
+            </ListItem>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              <ListItem button className={classes.nested}>
+                <ListItemIcon>
+                  <DraftsIcon />
+                </ListItemIcon>
+                <ListItemText primary="Starred" />
+                <canvas id={myChart} width="400" height="400"></canvas>
+              </ListItem>
+            </List>
+          </Collapse>
+          </List>
         </Typography>
       </div>
     </Paper>
