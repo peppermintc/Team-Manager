@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -21,24 +21,6 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
 import List from '@material-ui/core/List';
-
-import Chart from 'chart.js';
-var myChart = new Chart(ctx, {
-  type: 'radar',
-  data: [20, 10, 4, 2],
-  options: {
-    scale: {
-        angleLines: {
-            display: false
-        },
-        ticks: {
-            suggestedMin: 50,
-            suggestedMax: 100
-        }
-    }
-  }
-});
-var ctx = 'myChart';
 
 
 const styles = (theme) => ({
@@ -67,7 +49,9 @@ const styles = (theme) => ({
 function Content(props) {
   const { classes } = props;
   
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+
+ 
 
   const handleClick = () => {
     setOpen(!open);
@@ -122,12 +106,12 @@ function Content(props) {
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <ListItem button className={classes.nested}>
+              <ListItem button className={classes.nested} style={{height: '500px'}}>
                 <ListItemIcon>
                   <DraftsIcon />
                 </ListItemIcon>
                 <ListItemText primary="Starred" />
-                <canvas id={myChart} width="400" height="400"></canvas>
+                PLACE TO PUT CHARTS                 
               </ListItem>
             </List>
           </Collapse>
