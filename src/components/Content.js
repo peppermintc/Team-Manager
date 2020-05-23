@@ -22,6 +22,7 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
 import List from '@material-ui/core/List';
 
+import ChartPractice from './ChartPractice';
 
 const styles = (theme) => ({
   paper: {
@@ -111,7 +112,8 @@ function Content(props) {
                   <DraftsIcon />
                 </ListItemIcon>
                 <ListItemText primary="Starred" />
-                PLACE TO PUT CHARTS                 
+                {/* CHARTJS */}
+                <ChartPractice />
               </ListItem>
             </List>
           </Collapse>
