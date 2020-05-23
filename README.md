@@ -1,5 +1,5 @@
 ### run backend server
-node ./src/server/server.js
+npm run back
 
 ### run react
-npm run start
+npm run front
