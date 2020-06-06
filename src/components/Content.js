@@ -92,28 +92,46 @@ function Content(props) {
       <div className={classes.contentWrapper}>
         <Typography color="textSecondary" align="center">
           <List>
-          <ListItem button>
-            <ListItemIcon>
-              <DraftsIcon />
-            </ListItemIcon>
-            <ListItemText primary="Drafts" />
-          </ListItem>
-          <ListItem button onClick={handleClick}>
+            <ListItem button style={{  display:'grid', gridTemplateColumns: '1fr 1fr 10fr 1fr 4fr 1fr', textAlign: 'center' }}>
+              <div>11</div>
+              <img style={{ height: '52px', border: '2.5px solid black' }} src="http://demo.themeboy.com/football-club-soccer/wp-content/uploads/sites/34/sportspress-soccer-player-4-300x300.jpg"/>
+              <div style={{ textAlign: 'left', paddingLeft:'20px' }}>Mack Villarreal</div>
+              <div>FW</div>
+              <div>1.81m / 76.1kg</div>
+              {open ? <ExpandLess /> : <ExpandMore />}
+            </ListItem>
+            <ListItem button style={{  display:'grid', gridTemplateColumns: '1fr 1fr 10fr 1fr 4fr 1fr', textAlign: 'center' }} onClick={handleClick}>
+              <div>11</div>
+              <img style={{ height: '52px', border: '2.5px solid black' }} src="http://demo.themeboy.com/football-club-soccer/wp-content/uploads/sites/34/sportspress-soccer-player-4-300x300.jpg"/>
+              <div style={{ textAlign: 'left', paddingLeft:'20px' }}>Mack Villarreal</div>
+              <div>FW</div>
+              <div>1.81m / 76.1kg</div>
+              {open ? <ExpandLess /> : <ExpandMore />}
+            </ListItem>
+            <ListItem button style={{  display:'grid', gridTemplateColumns: '1fr 1fr 10fr 1fr 4fr 1fr', textAlign: 'center' }} onClick={handleClick}>
+              <div>11</div>
+              <img style={{ height: '52px', border: '2.5px solid black' }} src="http://demo.themeboy.com/football-club-soccer/wp-content/uploads/sites/34/sportspress-soccer-player-4-300x300.jpg"/>
+              <div style={{ textAlign: 'left', paddingLeft:'20px' }}>Mack Villarreal</div>
+              <div>FW</div>
+              <div>1.81m / 76.1kg</div>
+              {open ? <ExpandLess /> : <ExpandMore />}
+            </ListItem>
+          {/* <ListItem button onClick={handleClick}>
               <ListItemIcon>
                 <DraftsIcon />
+                <img style={{ height: '100px' }} src="https://mblogthumb-phinf.pstatic.net/MjAxODA2MjlfMTc1/MDAxNTMwMjQyNjc3NDQw.bLmWW-gnEuzCD5Bp02THTy1AAX8W4rv06QGFUDhtyekg.ZWRb58QYcSAuF3Xs0BJRBbkPCnEQ_TUQtmCCq7uQsqMg.JPEG.dlgodls5563/IMG_4145.jpg?type=w800" alt="profile photo" />
               </ListItemIcon>
               <ListItemText primary="Inbox" />
               {open ? <ExpandLess /> : <ExpandMore />}
-            </ListItem>
-            <Collapse in={open} timeout="auto" unmountOnExit>
+          </ListItem> */}
+          <Collapse in={open} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               <ListItem button className={classes.nested} style={{height: '500px'}}>
-                <ListItemIcon>
-                  <DraftsIcon />
-                </ListItemIcon>
                 <ListItemText primary="Starred" />
+          
                 {/* CHARTJS */}
                 <ChartPractice />
+                
               </ListItem>
             </List>
           </Collapse>
