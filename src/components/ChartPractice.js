@@ -37,7 +37,7 @@ const ChartPractice = () => {
 
     return (
         <div>
-            <canvas id="myRadarChart" width="400" height="400"></canvas>
+            <canvas id="myRadarChart" width="270" height="270"></canvas>
         </div>
     );
 };
