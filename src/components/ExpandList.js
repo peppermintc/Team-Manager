@@ -10,7 +10,7 @@ import ChartPractice from './ChartPractice';
 
 import LinearProgress from '@material-ui/core/LinearProgress';
 
-export default function ExpandList() {
+export default function ExpandList(props) {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -22,24 +22,24 @@ export default function ExpandList() {
   return (
     <>
       <ListItem button style={{ display:'grid', gridTemplateColumns: '1fr 1fr 10fr 1fr 4fr 1fr', textAlign: 'center' }} onClick={handleClick}>
-        <div>11</div>
-        <img style={{ height: '52px', border: '2.5px solid black' }} src="http://demo.themeboy.com/football-club-soccer/wp-content/uploads/sites/34/sportspress-soccer-player-4-300x300.jpg"/>
-        <div style={{ textAlign: 'left', paddingLeft:'20px' }}>Mack Villarreal</div>
-        <div>FW</div>
-        <div>1.81m / 76.1kg</div>
+        <div>{props.option.number}</div>
+        <img style={{ height: '52px', border: '2.5px solid black' }} src={props.option.img}/>
+        <div style={{ textAlign: 'left', paddingLeft:'20px' }}>{props.option.name}</div>
+        <div>{props.option.position}</div>
+        <div>{props.option.height}m / {props.option.weight}kg</div>
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
 
       <Collapse id='0' in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           <ListItem style={{ display:'grid', gridTemplateColumns: '1fr 2fr 1fr' }}>
-              <img style={{ height: '200px', border: '2.5px solid black', marginLeft:'20px' }} src="http://demo.themeboy.com/football-club-soccer/wp-content/uploads/sites/34/sportspress-soccer-player-4-300x300.jpg"/>
+              <img style={{ height: '200px', border: '2.5px solid black', marginLeft:'20px' }} src={props.option.img}/>
               <div style={{ marginLeft:'35px', marginTop:'25px' }}>
-              <div>Back Number: 11</div><br />
-              <div>Name: Mack Villarreal</div><br />
-              <div>Position: FW</div><br />
-              <div>Height: 1.81m</div><br />
-              <div>Weight: 76.1kg</div><br />
+              <div>Back Number: {props.option.number}</div><br />
+              <div>Name: {props.option.name}</div><br />
+              <div>Position: {props.option.position}</div><br />
+              <div>Height: {props.option.height}m</div><br />
+              <div>Weight: {props.option.weight}kg</div><br />
               </div>
               {/* CHARTJS */}
               <ChartPractice />                  

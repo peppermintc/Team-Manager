@@ -104,9 +104,9 @@ function Content(props) {
       <div className={classes.contentWrapper}>
         <Typography color="textSecondary" align="center">
           <List>
-            <ExpandList/>
-            <ExpandList/>
-            <ExpandList/>
+            <ExpandList option={{ number:'11', img:'http://demo.themeboy.com/football-club-soccer/wp-content/uploads/sites/34/sportspress-soccer-player-4-300x300.jpg', name:'Mack Villarreal', position:'FW', height:'1.81', weight:'76.1' }}/>
+            <ExpandList option={{ number:'3', img:'http://demo.themeboy.com/football-club-soccer/wp-content/uploads/sites/34/sportspress-soccer-player-3-300x300.jpg', name:'Herschel Behringer', position:'DF', height:'1.84', weight:'76.0' }}/>
+            <ExpandList option={{ number:'5', img:'http://demo.themeboy.com/football-club-soccer/wp-content/uploads/sites/34/sportspress-soccer-player-2-300x300.jpg', name:'Mark Gerrard', position:'DF', height:'1.78', weight:'74.0' }}/>
             {/* <ListItem button style={{ display:'grid', gridTemplateColumns: '1fr 1fr 10fr 1fr 4fr 1fr', textAlign: 'center' }} onClick={handleClick2}>
               <div>11</div>
               <img style={{ height: '52px', border: '2.5px solid black' }} src="http://demo.themeboy.com/football-club-soccer/wp-content/uploads/sites/34/sportspress-soccer-player-4-300x300.jpg"/>
