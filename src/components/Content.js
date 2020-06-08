@@ -70,6 +70,33 @@ function Content(props) {
 
   let progress = 70;
 
+  let playerInfo = [
+    { 
+      number:'11',
+      img:'http://demo.themeboy.com/football-club-soccer/wp-content/uploads/sites/34/sportspress-soccer-player-4-300x300.jpg',
+      name:'Mack Villarreal',
+      position:'FW',
+      height:'1.81', 
+      weight:'76.1',
+    },
+    { 
+      number:'3', 
+      img:'http://demo.themeboy.com/football-club-soccer/wp-content/uploads/sites/34/sportspress-soccer-player-3-300x300.jpg', 
+      name:'Herschel Behringer', 
+      position:'DF', 
+      height:'1.84', 
+      weight:'76.0' 
+    },
+    { 
+      number:'5', 
+      img:'http://demo.themeboy.com/football-club-soccer/wp-content/uploads/sites/34/sportspress-soccer-player-2-300x300.jpg', 
+      name:'Mark Gerrard', 
+      position:'DF', 
+      height:'1.78', 
+      weight:'74.0' 
+    }
+  ]
+
   return (
     <Paper className={classes.paper}>
       <AppBar className={classes.searchBar} position="static" color="default" elevation={0}>
@@ -104,50 +131,9 @@ function Content(props) {
       <div className={classes.contentWrapper}>
         <Typography color="textSecondary" align="center">
           <List>
-            <ExpandList option={{ number:'11', img:'http://demo.themeboy.com/football-club-soccer/wp-content/uploads/sites/34/sportspress-soccer-player-4-300x300.jpg', name:'Mack Villarreal', position:'FW', height:'1.81', weight:'76.1' }}/>
-            <ExpandList option={{ number:'3', img:'http://demo.themeboy.com/football-club-soccer/wp-content/uploads/sites/34/sportspress-soccer-player-3-300x300.jpg', name:'Herschel Behringer', position:'DF', height:'1.84', weight:'76.0' }}/>
-            <ExpandList option={{ number:'5', img:'http://demo.themeboy.com/football-club-soccer/wp-content/uploads/sites/34/sportspress-soccer-player-2-300x300.jpg', name:'Mark Gerrard', position:'DF', height:'1.78', weight:'74.0' }}/>
-            {/* <ListItem button style={{ display:'grid', gridTemplateColumns: '1fr 1fr 10fr 1fr 4fr 1fr', textAlign: 'center' }} onClick={handleClick2}>
-              <div>11</div>
-              <img style={{ height: '52px', border: '2.5px solid black' }} src="http://demo.themeboy.com/football-club-soccer/wp-content/uploads/sites/34/sportspress-soccer-player-4-300x300.jpg"/>
-              <div style={{ textAlign: 'left', paddingLeft:'20px' }}>Mack Villarreal</div>
-              <div>FW</div>
-              <div>1.81m / 76.1kg</div>
-              {open2 ? <ExpandLess /> : <ExpandMore />}
-            </ListItem>
-            <Collapse in={open2} timeout="auto" unmountOnExit>
-              <List component="div" disablePadding>
-                <ListItem className={classes.nested} style={{ display:'grid', gridTemplateColumns: '1fr 2fr 1fr' }}>
-                  <img style={{ height: '200px', border: '2.5px solid black', marginLeft:'20px' }} src="http://demo.themeboy.com/football-club-soccer/wp-content/uploads/sites/34/sportspress-soccer-player-4-300x300.jpg"/>
-                  <div style={{ marginLeft:'35px', marginTop:'25px' }}>
-                    <div>Back Number: 11</div><br />
-                    <div>Name: Mack Villarreal</div><br />
-                    <div>Position: FW</div><br />
-                    <div>Height: 1.81m</div><br />
-                    <div>Weight: 76.1kg</div><br />
-                  </div>
-                  <ChartPractice />                  
-                </ListItem>
-                <div style={{ paddingTop:'20px' }}>
-                  <div style={{ display:'grid', gridTemplateColumns: '1fr 5fr', paddingRight:'50px' }}>
-                    <div>Running</div>
-                    <LinearProgress variant="determinate" value={progress} style={{top:'50%'}}/>
-                    <br />
-                  </div>
-                  <div style={{ display:'grid', gridTemplateColumns: '1fr 5fr', paddingRight:'50px' }}>
-                    <div>Agility</div>
-                    <LinearProgress variant="determinate" value={progress} style={{top:'50%'}}/>
-                    <br />
-                  </div>
-                  <div style={{ display:'grid', gridTemplateColumns: '1fr 5fr', paddingRight:'50px' }}>
-                    <div>Mobility</div>
-                    <LinearProgress variant="determinate" value={progress} style={{top:'50%'}}/>
-                    <br />
-                  </div>
-                </div>
-              </List>
-            </Collapse> */}
-            
+            <ExpandList option={playerInfo[0]}/>
+            <ExpandList option={playerInfo[1]}/>
+            <ExpandList option={playerInfo[2]}/>
           </List>
         </Typography>
       </div>
