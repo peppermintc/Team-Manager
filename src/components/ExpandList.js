@@ -42,7 +42,7 @@ export default function ExpandList(props) {
               <div>Weight: {props.option.weight}kg</div><br />
               </div>
               {/* CHARTJS */}
-              <ChartPractice />                  
+              <ChartPractice index={props.index}/>                  
           </ListItem>
           <div style={{ paddingTop:'20px' }}>
               <div style={{ display:'grid', gridTemplateColumns: '1fr 5fr', paddingRight:'50px' }}>

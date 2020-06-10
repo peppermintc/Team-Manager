@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import Chart from 'chart.js';
 
-const ChartPractice = () => {
+const ChartPractice = (props) => {
 
     useEffect(() => {
-        var ctx = document.getElementById('myRadarChart').getContext('2d');
+        var ctx = document.getElementsByClassName('myRadarChart')[props.index].getContext('2d');
         
         var data = {
             labels: ['Running', 'Swimming', 'Eating', 'Cycling', "Sleeping"],
@@ -37,7 +37,7 @@ const ChartPractice = () => {
 
     return (
         <div>
-            <canvas id="myRadarChart" width="270" height="270"></canvas>
+            <canvas className="myRadarChart" width="270" height="270"></canvas>
         </div>
     );
 };

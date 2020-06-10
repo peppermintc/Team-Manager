@@ -131,9 +131,9 @@ function Content(props) {
       <div className={classes.contentWrapper}>
         <Typography color="textSecondary" align="center">
           <List>
-            <ExpandList option={playerInfo[0]}/>
-            <ExpandList option={playerInfo[1]}/>
-            <ExpandList option={playerInfo[2]}/>
+            <ExpandList option={playerInfo[0]} index={0}/>
+            <ExpandList option={playerInfo[1]} index={1}/>
+            <ExpandList option={playerInfo[2]} index={2}/>
           </List>
         </Typography>
       </div>
